@@ -12,7 +12,7 @@ func _ready() -> void:
 	var hud_instance = hud_scene_template.instantiate()
 
 	add_child(map_instance)
-	add_child(card_instance)
+#	add_child(card_instance)
 	add_child(hud_instance)
 	
 	card_instance.hide()
