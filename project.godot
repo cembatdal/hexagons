@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="hexagons"
-run/main_scene="uid://cnfglyiu2mpuw"
+run/main_scene="uid://d1ixnvm2emcel"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
@@ -21,11 +21,22 @@ GameState="*uid://dt0ixnskcq24d"
 ResourceManager="*uid://t31lnlerh08i"
 TurnManager="*uid://cln52racjifo0"
 
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/size/window_width_override=540
+window/size/window_height_override=960
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
