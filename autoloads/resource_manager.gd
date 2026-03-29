@@ -21,13 +21,13 @@ func _ready():
 	morale.min_value = 0
 	morale.update_current(50)
 	
-	workforce.max_value = population.current 
-	workforce.min_value = 0
-	workforce.update_current(population.current)
-	
 	population.max_value = 10
 	population.min_value = 0
 	population.update_current(2)
+	
+	workforce.max_value = population.current 
+	workforce.min_value = 0
+	workforce.update_current(population.current)
 	
 func add_water(amount: int):
 	var new_amount = clamp(water.current + amount, water.min_value, water.max_value)
@@ -73,6 +73,16 @@ func reset_workforce():
 	workforce.max_value = population.current
 	workforce.update_current(population.current)
 	resource_amount_changed.emit("workforce", workforce.current, workforce.max_value, workforce.min_value)
+	
+func remove_population(amount: int):
+	var new_amount = clamp(population.current - amount, population.min_value, population.max_value)
+	population.update_current(new_amount)
+	resource_amount_changed.emit("population", population.current, population.max_value, population.min_value)
+	
+func reset_population():
+	population.max_value = population.current
+	population.update_current(population.current)
+	resource_amount_changed.emit("population", population.current, population.max_value, population.min_value)
 
 class GameResource:
 	var _current: int = 0

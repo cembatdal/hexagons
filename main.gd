@@ -15,4 +15,4 @@ func _ready() -> void:
 #	add_child(card_instance)
 	add_child(hud_instance)
 	
-	card_instance.hide()
+#	card_instance.hide()
