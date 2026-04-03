@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameState="*uid://dt0ixnskcq24d"
 ResourceManager="*uid://t31lnlerh08i"
 TurnManager="*uid://cln52racjifo0"
+GameConfig="*uid://cax37pt80ioe7"
 
 [display]
 
