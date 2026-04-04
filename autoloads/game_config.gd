@@ -9,3 +9,5 @@ const MAP_COLUMNS: int = 8
 
 const SCRAP_COUNT: int = 3
 const SCRAP_MIN_DISTANCE: int = 2
+
+enum BuildingType {NONE, WATER_COLLECTOR, SHELTER}

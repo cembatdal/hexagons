@@ -1,8 +1,19 @@
 extends Node2D
 
+signal hex_clicked(coords: Vector2i, tile_type: int)
+
 @onready var tile_map_layer = $TileMapLayer
 
 var tile_type_map: Dictionary = {}
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.is_pressed() and event.get_button_index() == MOUSE_BUTTON_LEFT:
+		var clicked_position = get_local_mouse_position()
+		var grid_coords = tile_map_layer.local_to_map(clicked_position)
+		if tile_type_map.has(grid_coords):
+			var type = tile_type_map[grid_coords]
+			hex_clicked.emit(grid_coords,type)
+			print("Tıklanan hex: ", grid_coords, " - Tip: ", type)
 
 func _generate_map():
 	for x in range(GameConfig.MAP_COLUMNS):
